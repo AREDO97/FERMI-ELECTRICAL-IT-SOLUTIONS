@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us - Fermi Electrical & IT Solutions</title>
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ===== GENERAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ===== HEADER (your existing header styling will override this) ===== */
+
+/* ===== CONTACT HERO ===== */
+.contact-hero {
+  background: linear-gradient(rgba(26,38,57,0.8), rgba(26,38,57,0.8)), url('https://images.unsplash.com/photo-1581091012184-5c99b6c0b64d?q=80&w=1470&auto=format&fit=crop') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+}
+
+/* ===== CONTACT METHODS ===== */
+.contact-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  flex: 1 1 280px;
+  max-width: 320px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: #ffb400;
+  margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+  margin-bottom: 0.5rem;
+  color: #1a2639;
+}
+
+/* ===== FORM SECTION ===== */
+.contact-form {
+  background: white;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1a2639;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ffb400;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 0.25rem;
+  color: #777;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 0.75rem;
+  font-size: 0.85rem;
+  color: #ffb400;
+}
+
+button.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: #ffb400;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.submit-btn:hover {
+  background: #e6a300;
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contact-methods {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  .navbar {
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            position: relative;
+            z-index: 1000;
+            background: linear-gradient(to right, white, rgb(199, 223, 232));
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #003366;
+        }
+
+        #logo {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #003366;
+            background-color: rgba(0, 51, 102, 0.1);
+        }
+
+        .quote-btn {
+            background-color: #003366;
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 30px !important;
+        }
+
+        .quote-btn:hover {
+            background-color: #002244 !important;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #003366;
+            font-size: 1.8rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-toggle i {
+            font-size: 1.8rem;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            padding-top: 20%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: transform 1s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            color: #003366;
+            text-decoration: none;
+            font-size: .9rem;
+            padding: 15px 0;
+            width: 80%;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+        }
+
+        .mobile-menu a.quote-btn {
+            margin-top: 20px;
+            background-color: #003366;
+            color: white !important;
+            padding: 12px 0 !important;
+            border-radius: 30px;
+            width: 30%;
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 992px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .logo span {
+                font-size: 1rem;
+            }
+
+            #logo {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                height: 50px;
+                width: 50px;
+            }
+
+            .logo span {
+                font-size: 0.9rem;
+            }
+        }
+        @media(min-width:1024px){
+          .mobile-menu {
+            display: none;
+          }
+        }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo2.jpg" alt="logo" />
+      <span>Fermi <span id="logo">Electricals & IT Solutions</span></span>
+    </div>
+    <nav id="nav-links" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="quote.html" class="quote-btn">Get Quote</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <a href="quote.html" class="quote-btn">Get Quote</a>
+</div>
+<!-- ===== CONTACT HERO ===== -->
+<section class="contact-hero">
+  <h1>Get in Touch</h1>
+  <p>We’re here to power your ideas and connect your world.</p>
+</section>
+
+<!-- ===== CONTACT METHODS ===== -->
+<section class="contact-methods">
+  <div class="contact-card">
+    <i>📧</i>
+    <h3>Email Us</h3>
+    <p>support@fermitech.com</p>
+  </div>
+  <div class="contact-card">
+    <i>📞</i>
+    <h3>Call Us</h3>
+    <p>+256 700 123 456</p>
+  </div>
+  <div class="contact-card">
+    <i>💬</i>
+    <h3>Chat with Us</h3>
+    <p>WhatsApp: +256 700 654 321</p>
+  </div>
+  <div class="contact-card">
+    <i>🌐</i>
+    <h3>Social Media</h3>
+    <p>@FermiSolutions on all platforms</p>
+  </div>
+</section>
+
+<!-- ===== CONTACT FORM ===== -->
+<section class="contact-form">
+  <h2>Send Us a Message</h2>
+  <form id="contactForm">
+    <div class="form-group">
+      <input type="text" id="name" placeholder=" " required />
+      <label for="name">Your Name</label>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" placeholder=" " required />
+      <label for="email">Your Email</label>
+    </div>
+    <div class="form-group">
+      <textarea id="message" placeholder=" " rows="4" required></textarea>
+      <label for="message">Your Message</label>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+    <div class="success-message" id="successMessage">Thank you! Your message has been sent.</div>
+  </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <!-- Your existing footer content goes here -->
+  <p style="text-align:center; padding:1rem; background:#1a2639; color:white;">&copy; 2025 Fermi Electrical & IT Solutions</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Simulate form submission
+  setTimeout(() => {
+    document.getElementById('successMessage').style.display = 'block';
+    this.reset();
+  }, 500);
+});
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = menuToggle.querySelector('i');
+
+    menuToggle.addEventListener('click', function () {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('active');
+
+      // Change icon based on menu state
+      if (mobileMenu.classList.contains('active')) {
+        menuIcon.classList.replace('fa-bars', 'fa-times');
+      } else {
+        menuIcon.classList.replace('fa-times', 'fa-bars');
+      }
+
+      // Toggle body scroll when menu is open
+      document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+    });
+
+    // Close menu when clicking on a link
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuIcon.classList.replace('fa-times', 'fa-bars');
+        document.body.style.overflow = 'auto';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

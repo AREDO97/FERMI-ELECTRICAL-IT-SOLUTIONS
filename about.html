@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us • Fermi Electrical & IT Solutions</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ---------- Base Reset ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color:#0f172a; line-height:1.6;
+      background: #ffffff;
+    }
+
+    /* ============ YOUR HEADER (kept & polished) ============ */
+    
+    
+
+    /* ============ ABOUT PAGE (namespaced) ============ */
+    .fermiAbout_wrap {
+       overflow-x: hidden; 
+      }
+    .fermiAbout_container { 
+      width:min(1200px, 92%);
+       margin:auto; }
+    .fermiAbout_sectionTitle {
+       font-size: clamp(1.6rem, 2.8vw, 2.2rem); 
+      font-weight:800; 
+      color:#0b2a52;
+       margin-bottom: .75rem;
+       }
+    .fermiAbout_sectionLead { 
+      color:#334155; 
+      max-width: 70ch;
+     }
+
+    /* HERO */
+    .fermiAbout_hero {
+
+      position: relative;
+       isolation:isolate; 
+      min-height: 68vh;
+       display:grid; 
+       place-items:center; 
+       text-align:center; 
+       color:#fff; overflow:hidden;
+      background: #0b2a52;
+    }
+    .fermiAbout_hero::before{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.65)),
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      z-index:-1;
+      transform: scale(1.05);
+    }
+    .fermiAbout_heroInner{ padding: 6rem 1rem 4rem; }
+    .fermiAbout_badge{ display:inline-block; background:#facc15; color:#111827; font-weight:800; padding:.4rem .9rem; border-radius:999px; margin-bottom:1rem; }
+    .fermiAbout_heroTitle{ font-size: clamp(2rem, 6vw, 3.2rem); font-weight:900; letter-spacing:.2px; }
+    .fermiAbout_rotate{ display:inline-block; border-right:3px solid #f59e0b; padding-right:6px; white-space:nowrap; }
+    .fermiAbout_heroSub{ margin: 1rem auto 1.5rem; max-width: 70ch; color:#e5e7eb; }
+    .fermiAbout_ctaRow{ display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+    .fermiAbout_btn{
+      display:inline-flex; align-items:center; gap:.5rem; padding:.78rem 1.15rem; border-radius:12px; font-weight:800; transition:transform .2s, box-shadow .2s, background .2s;
+    }
+    .fermiAbout_btn--primary{
+       background:#facc15;
+       color:#111827;
+       }
+    .fermiAbout_btn--ghost{
+       border:2px solid #e5e7eb;
+        color:#fff; 
+      }
+    .fermiAbout_btn:focus-visible{ 
+      outline:3px solid #facc15;
+       outline-offset:2px;
+       }
+    .fermiAbout_btn:hover{
+       transform: translateY(-2px);
+        box-shadow:0 10px 20px rgba(0,0,0,.2); 
+      }
+
+    /* WHO WE ARE */
+    .fermiAbout_twoCol{ 
+      display:grid; 
+      grid-template-columns: 1.05fr .95fr; gap:40px; 
+      align-items:center;
+       padding:64px 0; 
+      }
+    @media (max-width: 900px){ .fermiAbout_twoCol{
+       grid-template-columns: 1fr; 
+      } 
+    }
+    .fermiAbout_card {
+      background:#ffffff; border-radius:18px; 
+      padding:28px; 
+      box-shadow: 0 12px 30px rgba(2,6,23,.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .fermiAbout_card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(2,6,23,.12); }
+    .fermiAbout_points{ display:grid; gap:14px; margin-top:16px; }
+    .fermiAbout_points li{ list-style:none; display:flex; align-items:flex-start; gap:.6rem; }
+    .fermiAbout_points i{ color:#2563eb; margin-top:2px; }
+
+    .fermiAbout_stack{ position:relative; aspect-ratio: 4/3; border-radius:18px; overflow:hidden; }
+    .fermiAbout_stack img{ width:100%; height:100%; object-fit:cover; }
+    .fermiAbout_chip{
+      position:absolute; bottom:12px; left:12px; background:rgba(15,23,42,.86); color:#fff; padding:.5rem .75rem; border-radius:10px; font-weight:800; backdrop-filter: blur(6px);
+    }
+
+    /* STATS */
+    .fermiAbout_stats{ background:#0b2a52; color:#fff; padding: 46px 0; }
+    .fermiAbout_statsGrid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:22px; }
+    @media (max-width: 900px){ .fermiAbout_statsGrid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px){ .fermiAbout_statsGrid{ grid-template-columns: 1fr 1fr; } }
+    .fermiAbout_statBox{ background:#0e3566; border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:20px; text-align:center; }
+    .fermiAbout_statIcon{ font-size: 30px; margin-bottom:6px; color:#facc15; }
+    .fermiAbout_statNum{ font-size: clamp(1.5rem, 4.5vw, 2.2rem); font-weight:900; }
+    .fermiAbout_statLbl{ opacity:.9; }
+
+    /* VALUES */
+    .fermiAbout_values{ padding:64px 0; }
+    .fermiAbout_pills{ display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 24px; }
+    .fermiAbout_pill{ padding:.5rem .85rem; border-radius:999px; background:#eef2ff; color:#1e3a8a; font-weight:800; }
+    .fermiAbout_valueGrid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+    @media (max-width: 980px){ .fermiAbout_valueGrid{ grid-template-columns: 1fr; } }
+    .fermiAbout_valueCard{ background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:20px; display:grid; grid-template-columns: 56px 1fr; gap:12px; align-items:start; }
+    .fermiAbout_valueCard i{ font-size:28px; color:#0ea5e9; }
+
+    /* TIMELINE */
+    .fermiAbout_timeline{ position:relative; padding: 12px 0 0; }
+    .fermiAbout_timeline::before{ content:""; position:absolute; left:20px; top:0; bottom:0; width:3px; background:#dbeafe; }
+    .fermiAbout_tlItem{ position:relative; padding-left:64px; margin-bottom:20px; }
+    .fermiAbout_dot{ position:absolute; left:12px; top:.35rem; width:18px; height:18px; border-radius:50%; background:#1d4ed8; box-shadow:0 0 0 5px #dbeafe; }
+
+    /* TEAM */
+    .fermiAbout_team{ padding:64px 0; background:#f8fafc; }
+    .fermiAbout_teamGrid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:18px; }
+    @media (max-width: 1100px){ .fermiAbout_teamGrid{ grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 800px){ .fermiAbout_teamGrid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px){ .fermiAbout_teamGrid{ grid-template-columns: 1fr; } }
+    .fermiAbout_teamCard{ background:#fff; border-radius:16px; overflow:hidden; border:1px solid #e5e7eb; transition:transform .25s, box-shadow .25s; }
+    .fermiAbout_teamCard:hover{ transform: translateY(-4px); box-shadow: 0 16px 30px rgba(2,6,23,.12); }
+    .fermiAbout_teamImg{ aspect-ratio: 4/3; overflow:hidden; }
+    .fermiAbout_teamImg img{ width:100%; height:100%; object-fit:cover; transition: transform .4s; }
+    .fermiAbout_teamCard:hover img{ transform: scale(1.06); }
+    .fermiAbout_teamBody{ padding:14px 16px; }
+    .fermiAbout_teamRole{ color:#475569; font-size:.95rem; }
+    .fermiAbout_teamIcons a{ margin-right:10px; color:#0b2a52; }
+    .fermiAbout_teamIcons a:hover{ color:#1d4ed8; }
+
+    /* PARTNERS marquee */
+    .fermiAbout_partners{ padding:34px 0; background:#0b2a52; color:#fff; overflow:hidden; }
+    .fermiAbout_marquee{ display:flex; gap:40px; animation: fermiAbout_scroll 18s linear infinite; }
+    @keyframes fermiAbout_scroll { from{ transform: translateX(0);} to{ transform: translateX(-50%);} }
+    .fermiAbout_partner{ display:flex; align-items:center; gap:10px; padding:8px 16px; background:#113867; border-radius:12px; white-space:nowrap; }
+
+    /* FAQ */
+    
+
+    /* POLL (improved) */
+    .fermiAbout_poll{ padding:54px 0; }
+    .fermiAbout_pollGrid{ display:grid; grid-template-columns: 1.2fr .8fr; gap:20px; align-items:stretch; }
+    @media (max-width: 900px){ .fermiAbout_pollGrid{ grid-template-columns: 1fr; } }
+    .fermiAbout_pollBox{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:18px; display:grid; gap:12px; }
+    .fermiAbout_pollChoices{ display:flex; flex-wrap:wrap; gap:10px; }
+    .fermiAbout_choice{ padding:.58rem .9rem; border-radius:12px; background:#e2e8f0; cursor:pointer; border:none; font-weight:800; }
+    .fermiAbout_choice[disabled]{ opacity:.45; cursor:not-allowed; }
+    .fermiAbout_otherRow{ display:flex; gap:10px; flex-wrap:wrap; }
+    .fermiAbout_input{ flex:1 1 240px; border:1px solid #cbd5e1; border-radius:10px; padding:.6rem .75rem; font-size:1rem; }
+    .fermiAbout_submit{ padding:.6rem 1rem; border:none; border-radius:10px; font-weight:800; background:#2563eb; color:#fff; }
+    .fermiAbout_results{ display:grid; gap:10px; margin-top:6px; }
+    .fermiAbout_row{ display:grid; grid-template-columns: 120px 1fr 48px; gap:10px; align-items:center; }
+    .fermiAbout_row label{ color:#0b2a52; font-weight:700; }
+    .fermiAbout_bar{ height:12px; background:#e2e8f0; border-radius:999px; overflow:hidden; }
+    .fermiAbout_bar > span{ display:block; height:100%; width:0; background:#2563eb; transition: width .6s ease; }
+    .fermiAbout_pct{ text-align:right; font-weight:800; color:#0b2a52; }
+
+    /* Reveal on scroll */
+    .fermiAbout_reveal{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .fermiAbout_reveal.isVisible{ opacity:1; transform:none; }
+
+    .fermiAbout_spacer32{ height:32px; }
+
+    /* ============ YOUR FOOTER (kept & polished) ============ */
+    .fermi-footer { background-color:#1a2639; padding: 1.5rem 1rem; color:#d1dae6; font-size: 1rem; text-align:center; }
+    .fermi-footer-bottom p { margin: 0; font-size: 0.95rem; }
+    #backToTopBtn {
+      position: fixed; bottom: 1rem; right: 1rem;
+      background-color: #ffb400; color:#1a2639;
+      border: none; border-radius: 50%; width: 2.6rem; height: 2.6rem;
+      font-size: 1.2rem; cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      opacity: 0; pointer-events: none; transition: all 0.3s ease;
+    }
+    #backToTopBtn.show { opacity: 1; pointer-events: auto; }
+    #backToTopBtn:hover { background-color: #ffa500; transform: translateY(-3px); }
+    .navbar {
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            position: relative;
+            z-index: 1000;
+            background: linear-gradient(to right, white, rgb(199, 223, 232));
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #003366;
+        }
+
+        #logo {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #003366;
+            background-color: rgba(0, 51, 102, 0.1);
+        }
+
+        .quote-btn {
+            background-color: #003366;
+            color: white !important;
+            padding: 8px 20px !important;
+            border-radius: 30px !important;
+        }
+
+        .quote-btn:hover {
+            background-color: #002244 !important;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #003366;
+            font-size: 1.8rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-toggle i {
+            font-size: 1.8rem;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            padding-top: 20%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: transform 1s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            color: #003366;
+            text-decoration: none;
+            font-size: .9rem;
+            padding: 15px 0;
+            width: 80%;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+        }
+
+        .mobile-menu a.quote-btn {
+            margin-top: 20px;
+            background-color: #003366;
+            color: white !important;
+            padding: 12px 0 !important;
+            border-radius: 30px;
+            width: 30%;
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 992px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .logo span {
+                font-size: 1rem;
+            }
+
+            #logo {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo img {
+                height: 50px;
+                width: 50px;
+            }
+
+            .logo span {
+                font-size: 0.9rem;
+            }
+        }
+        @media(min-width:1024px){
+          .mobile-menu {
+            display: none;
+          }
+        }
+        /*FAQS*/
+        /* Base Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        /* FAQ Accordion */
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-button {
+            width: 100%;
+            padding: 15px 20px;
+            text-align: left;
+            background: #f8f9fa;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .accordion-button:hover {
+            background: #e9ecef;
+        }
+
+        .accordion-button .icon {
+            transition: transform 0.3s;
+            font-size: 1.2rem;
+            color: #3498db;
+            margin-left: 10px;
+        }
+
+        .accordion-button[aria-expanded="true"] .icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #fff;
+        }
+
+        .accordion-content p,
+        .accordion-content ul {
+            padding: 15px 0;
+            margin: 0;
+        }
+
+        .accordion-content ul {
+            padding-left: 20px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .accordion-button {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        
+            /* PARTNERS marquee */
+    .fermiAbout_partners{ padding:34px 0; background:#0b2a52; color:#fff; overflow:hidden; }
+    .fermiAbout_marquee{ display:flex; gap:40px; animation: fermiAbout_scroll 18s linear infinite; }
+    @keyframes fermiAbout_scroll { from{ transform: translateX(0);} to{ transform: translateX(-50%);} }
+    .fermiAbout_partner{ display:flex; align-items:center; gap:10px; padding:8px 16px; background:#113867; border-radius:12px; white-space:nowrap; }
+        #bad,#cool{
+          object-position: top;
+        }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header / Navbar (yours, improved) ===== -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo2.jpg" alt="logo" />
+        <span>Fermi <span id="logo">Electricals & IT Solutions</span></span>
+      </div>
+      <nav id="nav-links" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="quote.html" class="quote-btn">Get Quote</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="quote.html" class="quote-btn">Get Quote</a>
+  </div>
+
+  <!-- ===== Main About Page ===== -->
+  <main class="fermiAbout_wrap" id="main-content">
+
+    <!-- HERO -->
+    <section class="fermiAbout_hero" aria-label="About Fermi">
+      <div class="fermiAbout_heroInner fermiAbout_container">
+        <span class="fermiAbout_badge">About Fermi</span>
+        <h1 class="fermiAbout_heroTitle">
+          Powering <span class="fermiAbout_rotate" id="fermiAbout_rotating">Reliable Grids</span> with Smart IT
+        </h1>
+        <p class="fermiAbout_heroSub">
+          We design, install, and maintain electrical systems and enterprise networks that scale—safely, efficiently, and sustainably—across Uganda and East Africa.
+        </p>
+        <div class="fermiAbout_ctaRow" role="group" aria-label="About actions">
+          <a href="projects.html" class="fermiAbout_btn fermiAbout_btn--primary"><i class='bx bxs-bolt'></i> Our Projects</a>
+          <a href="contact.html" class="fermiAbout_btn fermiAbout_btn--ghost"><i class='bx bxs-message-detail'></i> Talk to Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO WE ARE -->
+    <section class="fermiAbout_container fermiAbout_twoCol fermiAbout_reveal" id="about-who">
+      <div class="fermiAbout_card" aria-labelledby="about-title">
+        <h2 class="fermiAbout_sectionTitle" id="about-title">Who We Are</h2>
+        <p class="fermiAbout_sectionLead">
+          Fermi Electrical & IT Solutions is a multidisciplinary team delivering end-to-end power and network infrastructure. From LV/MV installations and BMS/IoT to WAN/LAN design, data centers, and critical backup systems—we build with compliance, uptime, and lifetime cost in mind.
+        </p>
+        <ul class="fermiAbout_points" aria-label="Key capabilities">
+          <li><i class='bx bxs-check-shield'></i> Certified installations aligned with IEC/IEEE and local codes.</li>
+          <li><i class='bx bxs-network-chart'></i> WAN/LAN, SD-WAN, Wi-Fi 6/6E & structured cabling.</li>
+          <li><i class='bx bxs-battery-charging'></i> Backup power: UPS, solar-hybrid, generator integration.</li>
+          <li><i class='bx bxs-building-house'></i> Commercial/industrial wiring, panels, elevators & escalators interfaces.</li>
+          <li><i class='bx bxs-lock-alt'></i> Access control, CCTV, fire, motion detection & Alarm system installations.</li>
+        </ul>
+      </div>
+      <figure class="fermiAbout_stack" aria-label="Team at work">
+        <img loading="lazy" src="images/electrical3.jpeg" alt="Technicians working on a control panel">
+        <figcaption class="fermiAbout_chip"><i class='bx bxs-award'></i> 3+ Years • 200+ installs</figcaption>
+      </figure>
+    </section>
+
+    <!-- STATS -->
+    <section class="fermiAbout_stats" aria-label="Impact stats">
+      <div class="fermiAbout_container fermiAbout_statsGrid">
+        <div class="fermiAbout_statBox fermiAbout_reveal">
+          <div class="fermiAbout_statIcon"><i class='bx bxs-hard-hat'></i></div>
+          <div class="fermiAbout_statNum" data-count="600">0</div>
+          <div class="fermiAbout_statLbl">Projects Delivered</div>
+        </div>
+        <div class="fermiAbout_statBox fermiAbout_reveal">
+          <div class="fermiAbout_statIcon"><i class='bx bxs-timer'></i></div>
+          <div class="fermiAbout_statNum" data-count="99.6">0</div>
+          <div class="fermiAbout_statLbl">Uptime SLA (%)</div>
+        </div>
+        <div class="fermiAbout_statBox fermiAbout_reveal">
+          <div class="fermiAbout_statIcon"><i class='bx bxs-battery'></i></div>
+          <div class="fermiAbout_statNum" data-count="120">0</div>
+          <div class="fermiAbout_statLbl">MW Installed</div>
+        </div>
+        <div class="fermiAbout_statBox fermiAbout_reveal">
+          <div class="fermiAbout_statIcon"><i class='bx bxs-user-check'></i></div>
+          <div class="fermiAbout_statNum" data-count="350">0</div>
+          <div class="fermiAbout_statLbl">Clients Served</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="fermiAbout_container fermiAbout_values fermiAbout_reveal">
+      <h2 class="fermiAbout_sectionTitle">Mission, Vision & Values</h2>
+      <p class="fermiAbout_sectionLead">We exist to make critical infrastructure simple, safe, and sustainable for businesses and communities.</p>
+      <div class="fermiAbout_pills" role="list">
+        <span class="fermiAbout_pill">Safety First</span>
+        <span class="fermiAbout_pill">Engineering Rigor</span>
+        <span class="fermiAbout_pill">Customer Obsession</span>
+        <span class="fermiAbout_pill">Sustainability</span>
+        <span class="fermiAbout_pill">Integrity</span>
+      </div>
+
+      <div class="fermiAbout_valueGrid" role="list">
+        <article class="fermiAbout_valueCard" role="listitem">
+          <i class='bx bxs-bulb'></i>
+          <div>
+            <strong>Mission</strong>
+            <p>Design and maintain reliable electrical and IT systems that reduce downtime and total cost of ownership.</p>
+          </div>
+        </article>
+        <article class="fermiAbout_valueCard" role="listitem">
+          <i class='bx bxs-rocket'></i>
+          <div>
+            <strong>Vision</strong>
+            <p>Be East Africa’s most trusted partner for integrated power and digital infrastructure.</p>
+          </div>
+        </article>
+        <article class="fermiAbout_valueCard" role="listitem">
+          <i class='bx bxs-leaf'></i>
+          <div>
+            <strong>Values</strong>
+            <p>We engineer for people and planet—prioritizing safety, transparency, and measurable performance.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="fermiAbout_container fermiAbout_reveal" aria-label="Company timeline">
+      <h2 class="fermiAbout_sectionTitle">Our Journey</h2>
+      <div class="fermiAbout_timeline" role="list">
+        <div class="fermiAbout_tlItem" role="listitem">
+          <span class="fermiAbout_dot" aria-hidden="true"></span>
+          <h3>2020 — Humble Beginnings</h3>
+          <p>Started as a small team offering basic electrical troubleshooting and IT support for residential clients.</p>
+        </div>
+        <div class="fermiAbout_tlItem" role="listitem">
+          <span class="fermiAbout_dot" aria-hidden="true"></span>
+          <h3>2021 — Expanding Services</h3>
+          <p>Began offering structured cabling and small office network installations for local businesses.</p>
+        </div>
+        <div class="fermiAbout_tlItem" role="listitem">
+          <span class="fermiAbout_dot" aria-hidden="true"></span>
+          <h3>2022 — Building Partnerships</h3>
+          <p>Established relationships with hardware suppliers and began collaborating with licensed contractors on larger
+            projects.</p>
+        </div>
+        <div class="fermiAbout_tlItem" role="listitem">
+          <span class="fermiAbout_dot" aria-hidden="true"></span>
+          <h3>2023 — Growing Team</h3>
+          <p>Expanded our team of technicians and began offering more comprehensive IT solutions alongside electrical
+            services.</p>
+        </div>
+        <div class="fermiAbout_tlItem" role="listitem">
+          <span class="fermiAbout_dot" aria-hidden="true"></span>
+          <h3>2024 — Service Area Expansion</h3>
+          <p>Extended our service coverage to neighboring communities while maintaining our commitment to quality
+            workmanship.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="fermiAbout_team" aria-label="Meet the team">
+      <div class="fermiAbout_container">
+        <h2 class="fermiAbout_sectionTitle">Leadership Team</h2>
+        <div class="fermiAbout_teamGrid">
+          <article class="fermiAbout_teamCard fermiAbout_reveal">
+            <div class="fermiAbout_teamImg">
+              <img loading="lazy" src="images/ceoWinter.jpg" alt="Portrait of CEO">
+            </div>
+            <div class="fermiAbout_teamBody">
+              <strong>Winter E.</strong>
+              <!--Managing Director-->
+              <div class="fermiAbout_teamRole">CEO</div>
+              <p>Electrical engineer with a decade of mission-critical project delivery.</p>
+              <div class="fermiAbout_teamIcons" aria-label="Social links">
+                <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin-square' ></i></a>
+                <a href="mailto:aredoivan9@gmail.com" aria-label="Email"><i class='bx bx-envelope' ></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="fermiAbout_teamCard fermiAbout_reveal">
+            <div class="fermiAbout_teamImg">
+              <img loading="lazy" src="images/IMG-20250805-WA0009.jpg" alt="Portrait of Head of Networks" id="cool">
+            </div>
+            <div class="fermiAbout_teamBody">
+              <strong>Denis M.</strong>
+              <div class="fermiAbout_teamRole">Head of Electrical department</div>
+              <p>Designs resilient WAN/LAN, SD-WAN, Wi-Fi 6/6E and structured cabling topologies.</p>
+              <div class="fermiAbout_teamIcons">
+                <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+                <a href="mailto:aredoivan9@gmail.com"><i class='bx bx-envelope' ></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="fermiAbout_teamCard fermiAbout_reveal">
+            <div class="fermiAbout_teamImg">
+              <img loading="lazy" src="images/winterBad.jpg" id="bad">
+            </div>
+            <div class="fermiAbout_teamBody">
+              <strong>Brian T.</strong>
+              <div class="fermiAbout_teamRole">Head of IT solutions</div>
+              <p>End-to-end execution with uncompromising safety and quality controls.</p>
+              <div class="fermiAbout_teamIcons">
+                <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+                <a href="#"><i class='bx bx-envelope' ></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="fermiAbout_teamCard fermiAbout_reveal">
+            <div class="fermiAbout_teamImg">
+              <img loading="lazy" src="images/brian.jpg" alt="Portrait of QHSE Manager">
+            </div>
+            <div class="fermiAbout_teamBody">
+              <strong>Isaac O.</strong>
+              <div class="fermiAbout_teamRole">Projects Lead</div>
+              <p>IEC/IEEE compliance, permits, testing & commissioning documentation.</p>
+              <div class="fermiAbout_teamIcons">
+                <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+                <a href="mailto:aredoivan9@gmail.com"><i class='bx bx-envelope' ></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="fermiAbout_partners" aria-label="Partners">
+      <div class="fermiAbout_container">
+        <div class="fermiAbout_marquee" aria-hidden="true">
+          <span class="fermiAbout_partner"><i class='bx bxs-home'></i> Local Homes & Rentals</span>
+          <span class="fermiAbout_partner"><i class='bx bxs-coffee'></i> Café Net Solutions</span>
+          <span class="fermiAbout_partner"><i class='bx bxs-store-alt'></i> Neighborhood Retail</span>
+          <span class="fermiAbout_partner"><i class='bx bxs-school'></i> Private Tutors Inc.</span>
+          <span class="fermiAbout_partner"><i class='bx bxs-wrench'></i> AutoCare Garage</span>
+    
+          <!-- Duplicate for seamless loop -->
+          <span class="fermiAbout_partner"><i class='bx bxs-home'></i> Local Homes & Rentals</span>
+          <span class="fermiAbout_partner"><i class='bx bxs-coffee'></i> Café Net Solutions</span>
+          <span class="fermiAbout_partner"><i class='bx bxs-store-alt'></i> Neighborhood Retail</span>
+          <span class="fermiAbout_partner"><i class='bx bxs-school'></i> Private Tutors Inc.</span>
+          <span class="fermiAbout_partner"><i class='bx bxs-wrench'></i> AutoCare Garage</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+      <section class="faq-section" aria-label="Frequently asked questions">
+        <div class="container">
+          <h2 class="section-title">FAQs</h2>
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <button class="accordion-button" aria-expanded="false" aria-controls="faq1">
+                <span>What kind of electrical and security work do you handle?</span>
+                <i class='bx bx-chevron-down icon'></i>
+              </button>
+              <div id="faq1" class="accordion-content">
+                <p>We provide a range of electrical and low-voltage solutions, including:</p>
+                <ul>
+                  <li><strong>Basic Electrical Work</strong> – Wiring, lighting, and outlet installations</li>
+                  <li><strong>CCTV & Security Camera Installations</strong> – Setup and configuration</li>
+                  <li><strong>Solar Panel Support</strong> – Assistance with solar wiring</li>
+                  <li><strong>Fire & Motion Sensors</strong> – Installation of detectors</li>
+                  <li><strong>Automatic Gate Systems</strong> – Motor and sensor setup</li>
+                  <li><strong>GPS Tracking Devices</strong> – Installation in vehicles</li>
+                  <li><strong>Access Control Systems</strong> – Keypad or biometric installations</li>
+                </ul>
+                <p><em>Note: For complex systems, we collaborate with licensed professionals.</em></p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button" aria-expanded="false" aria-controls="faq2">
+                <span>Are you licensed for electrical work?</span>
+                <i class='bx bx-chevron-down icon'></i>
+              </button>
+              <div id="faq2" class="accordion-content">
+                <p>We handle low-voltage (under 50V) installations independently. For permitted/high-voltage
+                  work,
+                  we partner with certified electricians to ensure compliance with local regulations.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-button" aria-expanded="false" aria-controls="faq3">
+                <span>Do you offer maintenance for installed systems?</span>
+                <i class='bx bx-chevron-down icon'></i>
+              </button>
+              <div id="faq3" class="accordion-content">
+                <p>Yes! We provide troubleshooting and repairs for security cameras, sensors, and access control
+                  systems. For electrical issues beyond basic diagnostics, we refer to licensed experts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- POLL (improved) -->
+    <section class="fermiAbout_poll" aria-label="Quick poll">
+      <div class="fermiAbout_container">
+        <h2 class="fermiAbout_sectionTitle">Help Us Improve</h2>
+        <p class="fermiAbout_sectionLead">Which service matters most to you right now? Your feedback guides what we build next.</p>
+
+        <div class="fermiAbout_pollGrid fermiAbout_reveal">
+          <div class="fermiAbout_pollBox">
+            <div class="fermiAbout_pollChoices" role="group" aria-label="Poll choices">
+              <button class="fermiAbout_choice" data-key="power">Power Backup</button>
+              <button class="fermiAbout_choice" data-key="network">WAN/LAN & Wi-Fi</button>
+              <button class="fermiAbout_choice" data-key="security">CCTV & Access</button>
+              <button class="fermiAbout_choice" data-key="solar">Solar-Hybrid</button>
+            </div>
+            <div class="fermiAbout_otherRow">
+              <input class="fermiAbout_input" id="fermiAbout_otherInput" type="text" placeholder="Or type another need…" aria-label="Write-in option">
+              <button class="fermiAbout_submit" id="fermiAbout_otherBtn" type="button">Submit</button>
+            </div>
+            <small id="fermiAbout_voteNote" aria-live="polite"></small>
+          </div>
+
+          <div class="fermiAbout_pollBox" aria-label="Poll results">
+            <div class="fermiAbout_results" id="fermiAbout_results">
+              <div class="fermiAbout_row">
+                <label>Power Backup</label>
+                <div class="fermiAbout_bar"><span data-bar="power"></span></div>
+                <div class="fermiAbout_pct" data-pct="power">0%</div>
+              </div>
+              <div class="fermiAbout_row">
+                <label>WAN/LAN & Wi-Fi</label>
+                <div class="fermiAbout_bar"><span data-bar="network"></span></div>
+                <div class="fermiAbout_pct" data-pct="network">0%</div>
+              </div>
+              <div class="fermiAbout_row">
+                <label>CCTV & Access</label>
+                <div class="fermiAbout_bar"><span data-bar="security"></span></div>
+                <div class="fermiAbout_pct" data-pct="security">0%</div>
+              </div>
+              <div class="fermiAbout_row">
+                <label>Solar-Hybrid</label>
+                <div class="fermiAbout_bar"><span data-bar="solar"></span></div>
+                <div class="fermiAbout_pct" data-pct="solar">0%</div>
+              </div>
+              <div class="fermiAbout_row" id="fermiAbout_otherRow" style="display:none;">
+                <label id="fermiAbout_otherLabel">Other</label>
+                <div class="fermiAbout_bar"><span data-bar="other"></span></div>
+                <div class="fermiAbout_pct" data-pct="other">0%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="fermiAbout_spacer32"></div>
+  </main>
+
+  <!-- ===== Footer (yours, polished) ===== -->
+  <footer class="fermi-footer" role="contentinfo" aria-label="Footer">
+    <div class="fermi-footer-bottom">
+      <button id="backToTopBtn" aria-label="Back to top" title="Back to top">&uarr;</button>
+      <p>&copy; 2025 Fermi Electricals &amp; IT Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    /* Header: mobile menu toggle */
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', function () {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !isExpanded);
+          mobileMenu.classList.toggle('active');
+
+          // Change icon based on menu state
+          if (mobileMenu.classList.contains('active')) {
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+          } else {
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+          }
+
+          // Toggle body scroll when menu is open
+          document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+        });
+
+        // Close menu when clicking on a link
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = 'auto';
+          });
+        });
+      });
+
+    /* Back to top: show/hide + smooth scroll */
+    const backBtn = document.getElementById('backToTopBtn');
+    const showAt = 280;
+    function onScrollShowBtn(){
+      if (window.scrollY > showAt) backBtn.classList.add('show');
+      else backBtn.classList.remove('show');
+    }
+    window.addEventListener('scroll', onScrollShowBtn);
+    onScrollShowBtn();
+    backBtn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
+
+    /* Rotating hero words */
+    (function(){
+      const el = document.getElementById('fermiAbout_rotating');
+      const words = ["Reliable Grids","Secure Networks","Efficient Energy","Smart Buildings"];
+      let i = 0;
+      setInterval(()=>{ i=(i+1)%words.length; el.textContent = words[i]; }, 2200);
+    })();
+
+    /* Intersection Observer: reveal + counters */
+    (function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add('isVisible');
+            io.unobserve(entry.target);
+          }
+        });
+      },{ threshold: .12 });
+
+      document.querySelectorAll('.fermiAbout_reveal').forEach(el=> io.observe(el));
+
+      // counters
+      const nums = document.querySelectorAll('.fermiAbout_statNum');
+      const io2 = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const el = entry.target;
+            const target = parseFloat(el.getAttribute('data-count')) || 0;
+            const isPercent = el.nextElementSibling?.textContent.includes('SLA');
+            animateCount(el, target, 1200, isPercent);
+            io2.unobserve(el);
+          }
+        });
+      },{ threshold:.6 });
+      nums.forEach(n=> io2.observe(n));
+
+      function animateCount(el, target, duration, percent){
+        const start = performance.now();
+        const dec = (target%1!==0) ? 1 : 0;
+        function tick(now){
+          const p = Math.min((now-start)/duration, 1);
+          const val = (target * p);
+          el.textContent = percent ? (val.toFixed(1)) : (dec? val.toFixed(1) : Math.round(val));
+          if(p<1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+    })();
+
+    /* FAQ accordion */
+    
+          document.addEventListener('DOMContentLoaded', function () {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+              button.addEventListener('click', function () {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const contentId = this.getAttribute('aria-controls');
+                const content = document.getElementById(contentId);
+
+                // Close all items first
+                accordionButtons.forEach(btn => {
+                  btn.setAttribute('aria-expanded', 'false');
+                  const btnContentId = btn.getAttribute('aria-controls');
+                  document.getElementById(btnContentId).style.maxHeight = '0';
+                });
+
+                // Open current item if it was closed
+                if (!isExpanded) {
+                  this.setAttribute('aria-expanded', 'true');
+                  content.style.maxHeight = content.scrollHeight + 'px';
+                }
+              });
+            });
+
+            // Open first item by default (optional)
+            // const firstButton = document.querySelector('.accordion-button');
+            // firstButton.setAttribute('aria-expanded', 'true');
+            // const firstContent = document.getElementById(firstButton.getAttribute('aria-controls'));
+            // firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+          });
+        
+
+    /* Poll (upgraded): single vote, write-in, localStorage, percentages) */
+    (function(){
+      const KEY = 'fermiAbout_poll_v2';
+      const VOTED_KEY = 'fermiAbout_poll_voted';
+      const state = JSON.parse(localStorage.getItem(KEY) || '{"power":0,"network":0,"security":0,"solar":0}');
+      let hasOther = !!state.other;
+      const voted = localStorage.getItem(VOTED_KEY) === '1';
+
+      const choices = document.querySelectorAll('.fermiAbout_choice');
+      const otherInput = document.getElementById('fermiAbout_otherInput');
+      const otherBtn = document.getElementById('fermiAbout_otherBtn');
+      const voteNote = document.getElementById('fermiAbout_voteNote');
+
+      const bars = {
+        power: document.querySelector('[data-bar="power"]'),
+        network: document.querySelector('[data-bar="network"]'),
+        security: document.querySelector('[data-bar="security"]'),
+        solar: document.querySelector('[data-bar="solar"]'),
+        other: document.querySelector('[data-bar="other"]')
+      };
+      const pcts = {
+        power: document.querySelector('[data-pct="power"]'),
+        network: document.querySelector('[data-pct="network"]'),
+        security: document.querySelector('[data-pct="security"]'),
+        solar: document.querySelector('[data-pct="solar"]'),
+        other: document.querySelector('[data-pct="other"]')
+      };
+
+      function ensureOtherRow(){
+        const row = document.getElementById('fermiAbout_otherRow');
+        const label = document.getElementById('fermiAbout_otherLabel');
+        if (!hasOther && state.other && state.other > 0){
+          hasOther = true;
+          row.style.display = '';
+          label.textContent = 'Other';
+        } else if (hasOther) {
+          row.style.display = '';
+        }
+      }
+
+      function totalVotes(){
+        return Object.values(state).reduce((a,b)=> a + (b||0), 0);
+      }
+
+      function render(){
+        ensureOtherRow();
+        const total = totalVotes() || 1;
+        Object.keys(state).forEach(k=>{
+          if (!bars[k]) return;
+          const pct = Math.round((state[k]/total)*100);
+          bars[k].style.width = pct + '%';
+          bars[k].setAttribute('aria-valuenow', pct);
+          bars[k].setAttribute('aria-valuemin', 0);
+          bars[k].setAttribute('aria-valuemax', 100);
+          pcts[k].textContent = pct + '%';
+          bars[k].title = pct + '%';
+        });
+
+        if (voted) {
+          choices.forEach(b=> b.setAttribute('disabled','true'));
+          otherBtn.setAttribute('disabled','true');
+          otherInput.setAttribute('disabled','true');
+          voteNote.textContent = 'Thanks! Your vote has been recorded.';
+        } else {
+          voteNote.textContent = '';
+        }
+      }
+
+      function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+
+      function cast(key){
+        if (localStorage.getItem(VOTED_KEY) === '1') return;
+        state[key] = (state[key]||0) + 1;
+        save();
+        localStorage.setItem(VOTED_KEY, '1');
+        render();
+      }
+
+      choices.forEach(btn=>{
+        btn.addEventListener('click', ()=> cast(btn.getAttribute('data-key')));
+      });
+
+      otherBtn.addEventListener('click', ()=>{
+        if (localStorage.getItem(VOTED_KEY) === '1') return;
+        const val = (otherInput.value || '').trim();
+        if (!val) { otherInput.focus(); return; }
+        state.other = (state.other||0) + 1;
+        save();
+        localStorage.setItem(VOTED_KEY, '1');
+        hasOther = true;
+        render();
+      });
+
+      // Init
+      render();
+    })();
+  </script>
+</body>
+</html>

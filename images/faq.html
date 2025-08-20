@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Accordion</title>
+    <!-- Add Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Base Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        /* FAQ Accordion */
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-button {
+            width: 100%;
+            padding: 15px 20px;
+            text-align: left;
+            background: #f8f9fa;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .accordion-button:hover {
+            background: #e9ecef;
+        }
+
+        .accordion-button .icon {
+            transition: transform 0.3s;
+            font-size: 1.2rem;
+            color: #3498db;
+            margin-left: 10px;
+        }
+
+        .accordion-button[aria-expanded="true"] .icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #fff;
+        }
+
+        .accordion-content p,
+        .accordion-content ul {
+            padding: 15px 0;
+            margin: 0;
+        }
+
+        .accordion-content ul {
+            padding-left: 20px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .accordion-button {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="faq-section" aria-label="Frequently asked questions">
+        <div class="container">
+            <h2 class="section-title">FAQs</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false" aria-controls="faq1">
+                        <span>What kind of electrical and security work do you handle?</span>
+                        <i class='bx bx-chevron-down icon'></i>
+                    </button>
+                    <div id="faq1" class="accordion-content">
+                        <p>We provide a range of electrical and low-voltage solutions, including:</p>
+                        <ul>
+                            <li><strong>Basic Electrical Work</strong> – Wiring, lighting, and outlet installations</li>
+                            <li><strong>CCTV & Security Camera Installations</strong> – Setup and configuration</li>
+                            <li><strong>Solar Panel Support</strong> – Assistance with solar wiring</li>
+                            <li><strong>Fire & Motion Sensors</strong> – Installation of detectors</li>
+                            <li><strong>Automatic Gate Systems</strong> – Motor and sensor setup</li>
+                            <li><strong>GPS Tracking Devices</strong> – Installation in vehicles</li>
+                            <li><strong>Access Control Systems</strong> – Keypad or biometric installations</li>
+                        </ul>
+                        <p><em>Note: For complex systems, we collaborate with licensed professionals.</em></p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false" aria-controls="faq2">
+                        <span>Are you licensed for electrical work?</span>
+                        <i class='bx bx-chevron-down icon'></i>
+                    </button>
+                    <div id="faq2" class="accordion-content">
+                        <p>We handle low-voltage (under 50V) installations independently. For permitted/high-voltage
+                            work,
+                            we partner with certified electricians to ensure compliance with local regulations.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false" aria-controls="faq3">
+                        <span>Do you offer maintenance for installed systems?</span>
+                        <i class='bx bx-chevron-down icon'></i>
+                    </button>
+                    <div id="faq3" class="accordion-content">
+                        <p>Yes! We provide troubleshooting and repairs for security cameras, sensors, and access control
+                            systems. For electrical issues beyond basic diagnostics, we refer to licensed experts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    const contentId = this.getAttribute('aria-controls');
+                    const content = document.getElementById(contentId);
+
+                    // Close all items first
+                    accordionButtons.forEach(btn => {
+                        btn.setAttribute('aria-expanded', 'false');
+                        const btnContentId = btn.getAttribute('aria-controls');
+                        document.getElementById(btnContentId).style.maxHeight = '0';
+                    });
+
+                    // Open current item if it was closed
+                    if (!isExpanded) {
+                        this.setAttribute('aria-expanded', 'true');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+
+            // Open first item by default (optional)
+            // const firstButton = document.querySelector('.accordion-button');
+            // firstButton.setAttribute('aria-expanded', 'true');
+            // const firstContent = document.getElementById(firstButton.getAttribute('aria-controls'));
+            // firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+        });
+    </script>
+</body>
+
+</html>
