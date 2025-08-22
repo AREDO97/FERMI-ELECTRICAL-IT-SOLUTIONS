@@ -9,16 +9,18 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
       <!-- Font Awesome CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: #333;
       line-height: 1.6;
     }
@@ -235,7 +237,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background: #00bcd4;
+  background: #ffb400;
   margin: 10px auto 0;
   border-radius: 2px;
 }
@@ -604,7 +606,7 @@
 }
 
 .testimonialDotFermi_r9w.active {
-  background-color: #0d6efd;
+  background-color: #f1c40f;
   transform: scale(1.15);
 }
 
@@ -757,9 +759,9 @@
         }
 
         .nav-links a {
-            color: #333;
+            color: #003366;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1rem;
             transition: all 0.3s ease;
             padding: 8px 12px;
@@ -774,7 +776,7 @@
         .quote-btn {
             background-color: #003366;
             color: white !important;
-            padding: 8px 20px !important;
+            padding: 10px 20px !important;
             border-radius: 30px !important;
         }
 
@@ -831,6 +833,7 @@
             color: #003366;
             text-decoration: none;
             font-size: .9rem;
+            font-weight: 500;
             padding: 15px 0;
             width: 80%;
             text-align: center;
@@ -897,6 +900,12 @@
             display: none;
           }
         }
+        @media (min-width: 600px) {
+          #smart{
+            object-fit: cover;
+           
+          }
+        }
   </style>
 </head>
 <body>
@@ -904,7 +913,7 @@
     <div class="container">
       <div class="logo">
         <img src="images/logo2.jpg" alt="logo" />
-        <span>Fermi <span id="logo">Electricals & IT Solutions</span></span>
+        <span style="font-weight: bold; font-size: 1.2rem;">Fermi <span id="logo">Electricals & IT Solutions</span></span>
       </div>
       <nav id="nav-links" class="nav-links">
         <a href="index.html">Home</a>
@@ -936,8 +945,7 @@
     <div class="hero-overlay">
       <p class="badge">Professional Electrical & IT Solutions Since 2022</p>
       <h1>Powering Your <span class="highlight">Future</span></h1>
-      <p class="subtext">Providing advanced electrical and IT solutions with precision, reliability, and integrity, designed to optimize performance
-         and ensure operational excellence.</p>
+      <p class="subtext">Expert solutions in electrical, IT and security infrastructure to protect your assets and optimize operations.</p>
       <div class="cta-buttons">
         <a href="quote.html" class="btn primary">Get Free Quote</a>
         <a href="about.html" class="btn secondary">Learn More</a>
@@ -947,25 +955,26 @@
 
   <!-- Typing Section -->
   <div id="typing-feature" role="region" aria-live="polite" aria-atomic="true">
-    <i id="typing-icon" class="fa-solid fa-star" aria-hidden="true"></i>
-    <div id="typing-text" aria-label="Feature description"></div>
+    <i id="typing-icon" class="fa-solid fa-star" aria-hidden="true" style="color:  #f1c40f;"></i>
+    <div id="typing-text" aria-label="Feature description" style="color:  #f1c40f;"></div>
   </div>
 
   <h1 class="section-heading">What We Offer !</h1>
   <div class="services-container">
     <div class="service-card">
-      <i class="fas fa-house"></i>
+      <i class="fas fa-house" style="color:  #f1c40f;"></i>
       <h2>Residential</h2>
-<p>Comprehensive residential electrical services, including installations, air conditioning and refrigeration, solar systems and sizing, electrical fences, energy-efficient solutions, and safety inspections.</p>    </div>
+<p>Comprehensive residential electrical services, including installations, air conditioning and refrigeration,CCTV installations, solar systems, electrical fences, Automatic gates, and Intrusion alarm installation.</p></div>
     <div class="service-card">
-      <i class="fas fa-city"></i>
+      <i class="fas fa-city" style="color:  #f1c40f;"></i>
       <h2>Commercial</h2>
 <p>Professional commercial electrical services including WAN/LAN setup, wiring for offices and shops, and installations for elevators 
   and escalators, all ensuring safety and code compliance.</p>    </div>
     <div class="service-card">
-      <i class="fas fa-industry"></i>
+      <i class="fas fa-industry" style="color:  #f1c40f;"></i>
       <h2>Industrial</h2>
-      <p>Reliable heavy-duty systems and maintenance services for industries and factories. We handle panel design, automation, and high-voltage safety compliance.</p>
+      <p>We provide integrated industrial solutions, from electrical panel design and automation to comprehensive security
+      systems—including fire alarms and motion detectors—ensuring safety, compliance, and reliability for your facility.</p>
     </div>
   </div>
 <!--contet professionals-->
@@ -987,7 +996,7 @@
 
     <div class="why-us-card">
       <div class="why-us-img-container">
-        <img src="images/electric 3.jpeg" alt="Customer First Approach">
+        <img src="images/customer-approach.jpg" alt="Customer First Approach">
       </div>
       <h3 class="why-us-heading">Customer-Centric Approach</h3>
       <p class="why-us-text">
@@ -1000,7 +1009,7 @@
 
     <div class="why-us-card">
       <div class="why-us-img-container">
-        <img src="images/electrical1.jpeg" alt="Transparent Pricing">
+        <img src="images/special-offer.jpg" alt="Transparent Pricing" style="object-fit: contain;">
       </div>
       <h3 class="why-us-heading">Transparent Pricing</h3>
       <p class="why-us-text">
@@ -1018,9 +1027,9 @@
   <div class="fermi-content">
     <h1 class="fermi-title">Trusted Quality</h1>
     <div class="fermi-icons">
-      <span>✔ Power</span>
-      <span>✔ Reliable</span>
-      <span>✔ Kampala</span>
+      <span><span id="check-icon" style="color: #facc15;">✔</span> Power</span>
+      <span><span id="check-icon" style="color: #facc15;">✔</span> Reliable</span>
+      <span><span id="check-icon" style="color: #facc15;">✔</span> Kampala</span>
     </div>
     <p class="fermi-description">
       Igniting Kampala and beyond with electrifying solutions. We bring the spark to your doorstep, countrywide!
@@ -1031,7 +1040,7 @@
   </div>
 
   <div class="fermi-image">
-    <img src="images/electrical3.jpeg" alt="Electrical Components">
+    <img src="images/spark.jpg" alt="Electrical Components">
   </div>
 </section>
 <!--end of country wide-->
@@ -1043,7 +1052,7 @@
     <!-- Testimonial 1 -->
     <div class="testimonialCardFermi_r9w activeTestimonial">
       <div class="testimonialImgFermi_r9w">
-        <img src="images/electrial.jpeg" alt="Electrical Maintenance" />
+        <img src="images/emergency.jpg" alt="Electrical Maintenance" style="object-fit: contain;" />
       </div>
       <h3 class="testimonialHeadingFermi_r9w">Fast Emergency Response</h3>
       <p class="testimonialTextFermi_r9w">
@@ -1055,7 +1064,7 @@
     <!-- Testimonial 2 -->
     <div class="testimonialCardFermi_r9w">
       <div class="testimonialImgFermi_r9w">
-        <img src="images/winter.jpg" alt="IT Infrastructure" />
+        <img src="images/intergration.jpg" alt="IT Infrastructure" style="object-fit: contain;" />
       </div>
       <h3 class="testimonialHeadingFermi_r9w">Seamless IT Integration</h3>
       <p class="testimonialTextFermi_r9w">
@@ -1067,7 +1076,7 @@
     <!-- Testimonial 3 -->
     <div class="testimonialCardFermi_r9w">
       <div class="testimonialImgFermi_r9w">
-        <img src="images/solar.jpg" alt="Solar Energy" />
+        <img src="images/solar-installation.jpg" alt="Solar Energy" style="object-fit: contain;"/>
       </div>
       <h3 class="testimonialHeadingFermi_r9w">Smart Energy Solutions</h3>
       <p class="testimonialTextFermi_r9w">

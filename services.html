@@ -49,7 +49,7 @@
 
         /* ===== Header (your header: unchanged structure/classes) ===== */
         .navbar {
-            background: linear-gradient(to right, #fff, #e6f0f7);
+           background: linear-gradient(to right, white, rgb(199, 223, 232));
             box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
             position: sticky;
             top: 0;
@@ -57,7 +57,7 @@
         }
 
         .container {
-            width: 92%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -90,19 +90,21 @@
 
         .nav-links {
             display: flex;
-            gap: 18px;
-            align-items: center
+            gap: 20px;
+            align-items: center;
+            height: 80px;
         }
 
         .nav-links a {
-            color: #2b3b49;
-            padding: 10px 12px;
+            color: #003366;
+            padding: 8px 12px;
             border-radius: 10px;
-            font-weight: 600
+            font-weight: 600;
+            padding: 8px 12px;
         }
 
         .nav-links a:hover {
-            background: #eaf2ff;
+            background-color: rgba(0, 51, 102, 0.1);
             color: var(--primary)
         }
 
@@ -114,7 +116,7 @@
         }
 
         .quote-btn:hover {
-            background: #002244
+             background-color: #002244 !important;
         }
 
         .menu-toggle {
@@ -160,7 +162,7 @@
             padding: 16px;
             border-bottom: 1px solid #e6edf5;
             color: var(--primary);
-            font-weight: 600
+            font-weight: 500
         }
 
         .mobile-menu a.quote-btn {
@@ -173,7 +175,12 @@
             }
             
         }
-
+ @media(max-width: 799px) {
+                  #logo{
+                    display: none;
+                    
+                }
+            }
         /* ===== Hero ===== */
         .hero {
             position: relative;
@@ -890,6 +897,9 @@
 #solar1{
     object-position: bottom;
 }
+.badge{
+    background-color: #f1c40f;
+}
     </style>
 </head>
 
@@ -929,12 +939,12 @@
     <!-- ===== Hero ===== -->
     <section class="hero" id="top">
         <div class="wrap">
-            <div class="kicker"><i class="fa-solid fa-shield-check"></i> Trusted • Since 2022 • Nationwide</div>
-            <h1>Electrical & IT Services Built for Reliability, Safety & Performance</h1>
+            <div class="kicker" style="background-color: #f1c40f; color: #003366;"><i class="fa-solid fa-shield-check"></i> Trusted • Since 2022 • Nationwide</div>
+            <h1>Security, Electrical & IT Services Built for Reliability, Safety & <span style="color: #f1c40f;">Performance</span></h1>
             <p>From high-quality electrical works to WAN/LAN, solar, elevators & escalators, GPS/IoT, fire safety,
                 alarms and motion detection — we deliver end-to-end solutions you can scale.</p>
             <div class="actions">
-                <a class="btn btn-primary" href="quote.html"><i class="fa-solid fa-paper-plane"></i> Request a Quote</a>
+                <a class="btn btn-primary" href="quote.html" style="background-color: #f1c40f; color: #003366;"><i class="fa-solid fa-paper-plane" ></i> Request a Quote</a>
                 <a class="btn btn-outline" href="#services"><i class="fa-solid fa-list-check"></i> Explore Services</a>
             </div>
         </div>
@@ -971,7 +981,7 @@
                         <img loading="lazy"
                             src="images/elect-installation2.jpg"
                             alt="Electrical wiring and distribution board" />
-                        <span class="badge"><i class="fa-solid fa-bolt"></i> Electrical</span>
+                        <span class="badge" ><i class="fa-solid fa-bolt"></i> Electrical</span>
                     </div>
                     <div class="body">
                         <h3 class="title"><i class="fa-solid fa-bolt"></i> Electrical Installations</h3>
@@ -1223,15 +1233,15 @@
             
             <div class="process">
                 <div class="step revealed">
-                    <h3><i class="fa-solid fa-clipboard-list"></i> 1) Assessment</h3>
+                    <h3><i class="fa-solid fa-clipboard-list" style="color: #f1c40f;"></i> 1) Assessment</h3>
                     <p>Site survey, requirements capture and risk review. We align to local codes and best practice.</p>
                 </div>
                 <div class="step">
-                    <h3><i class="fa-solid fa-drafting-compass"></i> 2) Design</h3>
+                    <h3><i class="fa-solid fa-drafting-compass" style="color: #f1c40f;"></i> 2) Design</h3>
                     <p>Load calculations, single-line diagrams, network topologies, bill of materials and timelines.</p>
                 </div>
                 <div class="step">
-                    <h3><i class="fa-solid fa-screwdriver-wrench"></i> 3) Install & Commission</h3>
+                    <h3><i class="fa-solid fa-screwdriver-wrench" style="color: #f1c40f;"></i> 3) Install & Commission</h3>
                     <p>Certified build, QA checklists, test sheets, handover documentation and training.</p>
                 </div>
             </div>
@@ -1247,14 +1257,14 @@
                     <p>Tell us about your site and goals — we’ll propose a tailored solution with clear timelines and
                         costs.</p>
                     <div class="cta-actions">
-                        <a class="btn btn-primary" href="quote.html"><i class="fa-solid fa-paper-plane"></i> Get a
+                        <a class="btn btn-primary" href="quote.html" style="background-color: #f1c40f;"><i class="fa-solid fa-paper-plane"></i> Get a
                             Quote</a>
-                        <a class="btn btn-outline" href="contact.html"><i class="fa-solid fa-phone"></i> Talk to an
+                        <a class="btn btn-outline" href="tel:+256760271098"><i class="fa-solid fa-phone"></i> Talk to an
                             Engineer</a>
                     </div>
                 </div>
                 <img loading="lazy"
-                    src="images/electrical-installations.jpg"
+                    src="images/CCTV.jpg"
                     alt="Engineer inspecting control cabinet" />
             </div>
         </div>
