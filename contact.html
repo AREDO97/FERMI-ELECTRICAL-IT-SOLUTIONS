@@ -7,6 +7,10 @@
     <title>Contact Us — Fermi Electrical & IT Solutions</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/4b9d6a8f1f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <script>
+       
+    </script>
 
     <!-- Fonts & Icons -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +40,7 @@ line-height: 1.6; }
         }
 
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -472,39 +476,54 @@ select:valid + label {
     });
 
     // Form handling
-    const form = document.getElementById("contactForm");
-    const successMessage = document.getElementById("successMessage");
+     (function () {
+            emailjs.init("zbPYsTdyAip7SvjH7"); // Initialize with your public key
+        })();
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+        const form = document.getElementById("contactForm");
+        const successMessage = document.getElementById("successMessage");
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value.trim();
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        if (!name || !email || !message || !subject) {
-            alert("⚠️ Please complete all fields.");
-            return;
-        }
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value.trim();
 
-        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-        if (!email.match(emailPattern)) {
-            alert("❌ Please enter a valid email address.");
-            return;
-        }
+            if (!name || !email || !message || !subject) {
+                alert("⚠️ Please complete all fields.");
+                return;
+            }
 
-        // Simulate sending
-        form.querySelector(".submit-btn").innerText = "Sending...";
-        setTimeout(() => {
-            form.querySelector(".submit-btn").innerText = "Send Message";
-            form.reset();
-            successMessage.style.display = "block";
-            setTimeout(() => successMessage.style.display = "none", 5000);
-        }, 1200);
-    });
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("❌ Please enter a valid email address.");
+                return;
+            }
 
+            // Simulate sending
+            form.querySelector(".submit-btn").innerText = "Sending...";
 
+            // Using EmailJS to send the email
+            emailjs.send("service_z6kcn29", "template_k435x14", {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+            })
+                .then(function (response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                    form.querySelector(".submit-btn").innerText = "Send Message";
+                    form.reset();
+                    successMessage.style.display = "block";
+                    setTimeout(() => successMessage.style.display = "none", 5000);
+                }, function (error) {
+                    console.log("FAILED...", error);
+                    alert("❌ Sorry, there was an error sending your message. Please try again later.");
+                    form.querySelector(".submit-btn").innerText = "Send Message";
+                });
+        });
      //footer
         const backToTopBtn = document.getElementById('backToTopBtn');
         window.addEventListener('scroll', () => {
