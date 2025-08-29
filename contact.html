@@ -159,13 +159,7 @@ line-height: 1.6; }
             
         }
 
- @media(max-width: 799px) {
-                  #logo4 {
-                    display: none;
-                    
-                }
-            }
-          
+
 /* Hero */
 .contact-hero {
   position: relative;
@@ -261,6 +255,13 @@ select:valid + label {
     .contact-card h3{
         color: #003366;
     }
+     @media(max-width: 799px) {
+                  #logo4 {
+                    display: none;
+                    
+                }
+            }
+          
     </style>
 </head>
 
@@ -271,7 +272,7 @@ select:valid + label {
         <div class="container">
             <div class="logo">
                 <img src="images/logo2.jpg" alt="Fermi Electricals & IT Solutions logo" />
-                <span style="font-weight: bold; font-size: 1.2rem; color: #003366;">Fermi <span id="logo4">Electricals & IT Solutions</span></span>
+                <span style="font-weight: bold; font-size: 1.2rem; color: #003366;">Fermi <span id="logo4" style="font-style: normal;">Electricals & IT Solutions</span></span>
             </div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
@@ -282,13 +283,13 @@ select:valid + label {
                 <a href="quote.html" class="quote-btn">Get Quote</a>
             </nav>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-                <i class="fas fa-bars" style="color: #003366;"></i>
+                <i class="fas fa-bars" style="color: #003366; padding: 1.5rem;"></i>
             </button>
         </div>
     </header>
     
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Main menu">
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Main menu" >
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html" aria-current="page">Services</a>
